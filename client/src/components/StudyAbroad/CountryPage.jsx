@@ -19,7 +19,7 @@ const CountryPage = ({ country }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-              <div className="country-hero-image" style={{ backgroundColor: country.color, borderRadius: '12px', height: '400px', overflow: 'hidden' }}>
+              <div className="country-hero-image" style={{ backgroundColor: country.color, borderRadius: '12px', overflow: 'hidden' }}>
                 {country.image ? (
                   <img src={country.image} alt={country.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 ) : (
@@ -157,12 +157,14 @@ const CountryPage = ({ country }) => {
             Get expert guidance from our counselors. Book a free consultation today!
           </p>
           <div data-aos="fade-up" data-aos-delay="200">
-            <Link to="/contact" className="btn btn-warning btn-lg me-3">
-              Book Appointment
-            </Link>
-            <Link to="/check-eligibility" className="btn btn-outline-light btn-lg">
-              Check Eligibility
-            </Link>
+            <div className="d-flex flex-wrap gap-3 justify-content-center">
+              <Link to="/contact" className="btn btn-warning btn-lg">
+                Book Appointment
+              </Link>
+              <Link to="/check-eligibility" className="btn btn-outline-light btn-lg">
+                Check Eligibility
+              </Link>
+            </div>
           </div>
         </div>
       </section>

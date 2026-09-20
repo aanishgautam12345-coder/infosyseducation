@@ -16,7 +16,7 @@ const HeroSection = () => {
                 Studying abroad offers you the opportunity to expand your horizons, see different cultures firsthand, and earn priceless knowledge in addition to academic benefits.
               </p>
               <div className="hero-buttons">
-                <Link to="/contact" className="btn btn-warning btn-lg px-5 me-3">
+                <Link to="/contact" className="btn btn-warning btn-lg px-5">
                   Book Appointment
                 </Link>
                 <Link to="/check-eligibility" className="btn btn-outline-light btn-lg px-5">

@@ -23,7 +23,7 @@ const AboutContent = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-              <div className="about-image-placeholder" style={{ backgroundColor: '#0d2b55', borderRadius: '12px', height: '400px' }}>
+              <div className="about-image-placeholder country-hero-image" style={{ backgroundColor: '#0d2b55', borderRadius: '12px' }}>
                 <div className="d-flex align-items-center justify-content-center h-100 text-white">
                   <div className="text-center">
                     <img src="/images/logo.png" alt="Infosys Education" style={{ maxHeight: '120px' }} />
@@ -144,12 +144,14 @@ const AboutContent = () => {
           <p className="text-light mb-4">
             Contact us today for a free consultation and take the first step towards your international education.
           </p>
-          <Link to="/contact" className="btn btn-warning btn-lg me-3">
-            Contact Us
-          </Link>
-          <Link to="/check-eligibility" className="btn btn-outline-light btn-lg">
-            Check Eligibility
-          </Link>
+          <div className="d-flex flex-wrap gap-3 justify-content-center">
+            <Link to="/contact" className="btn btn-warning btn-lg">
+              Contact Us
+            </Link>
+            <Link to="/check-eligibility" className="btn btn-outline-light btn-lg">
+              Check Eligibility
+            </Link>
+          </div>
         </div>
       </section>
     </>

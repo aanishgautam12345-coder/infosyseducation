@@ -4,6 +4,7 @@ import { Navbar as BSNavbar, Nav, Container } from 'react-bootstrap';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,14 +14,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const closeNav = () => setExpanded(false);
+
   return (
     <BSNavbar
       expand="lg"
       fixed="top"
+      expanded={expanded}
+      onToggle={setExpanded}
       className={`navbar-custom ${scrolled ? 'scrolled' : ''}`}
     >
       <Container>
-        <Link to="/" className="navbar-brand d-flex align-items-center">
+        <Link to="/" className="navbar-brand d-flex align-items-center" onClick={closeNav}>
           <img
             src="/images/logo.png"
             alt="Infosys Education Logo"
@@ -36,12 +41,12 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </BSNavbar.Toggle>
 
-        <BSNavbar.Collapse id="main-navbar">
+        <BSNavbar.Collapse id="main-navbar" className="navbar-collapse">
           <Nav className="ms-auto align-items-lg-center">
-            <NavLink to="/" className="nav-link">
+            <NavLink to="/" className="nav-link" onClick={closeNav}>
               Home
             </NavLink>
-            <NavLink to="/about" className="nav-link">
+            <NavLink to="/about" className="nav-link" onClick={closeNav}>
               About Us
             </NavLink>
 
@@ -56,28 +61,28 @@ const Navbar = () => {
                 Study Abroad
               </NavLink>
               <ul className="dropdown-menu">
-                <li><Link className="dropdown-item" to="/study-abroad">All Countries</Link></li>
+                <li><Link className="dropdown-item" to="/study-abroad" onClick={closeNav}>All Countries</Link></li>
                 <li><hr className="dropdown-divider" /></li>
-                <li><Link className="dropdown-item" to="/study-abroad/canada">🇨🇦 Canada</Link></li>
-                <li><Link className="dropdown-item" to="/study-abroad/australia">🇦🇺 Australia</Link></li>
-                <li><Link className="dropdown-item" to="/study-abroad/uk">🇬🇧 United Kingdom</Link></li>
-                <li><Link className="dropdown-item" to="/study-abroad/usa">🇺🇸 United States</Link></li>
-                <li><Link className="dropdown-item" to="/study-abroad/new-zealand">🇳🇿 New Zealand</Link></li>
-                <li><Link className="dropdown-item" to="/study-abroad/malta">🇲🇹 Malta</Link></li>
-                <li><Link className="dropdown-item" to="/study-abroad/europe">🇪🇺 Europe</Link></li>
+                <li><Link className="dropdown-item" to="/study-abroad/canada" onClick={closeNav}>🇨🇦 Canada</Link></li>
+                <li><Link className="dropdown-item" to="/study-abroad/australia" onClick={closeNav}>🇦🇺 Australia</Link></li>
+                <li><Link className="dropdown-item" to="/study-abroad/uk" onClick={closeNav}>🇬🇧 United Kingdom</Link></li>
+                <li><Link className="dropdown-item" to="/study-abroad/usa" onClick={closeNav}>🇺🇸 United States</Link></li>
+                <li><Link className="dropdown-item" to="/study-abroad/new-zealand" onClick={closeNav}>🇳🇿 New Zealand</Link></li>
+                <li><Link className="dropdown-item" to="/study-abroad/malta" onClick={closeNav}>🇲🇹 Malta</Link></li>
+                <li><Link className="dropdown-item" to="/study-abroad/europe" onClick={closeNav}>🇪🇺 Europe</Link></li>
               </ul>
             </div>
 
-            <NavLink to="/testimonials" className="nav-link">
+            <NavLink to="/testimonials" className="nav-link" onClick={closeNav}>
               Testimonials
             </NavLink>
-            <NavLink to="/check-eligibility" className="nav-link">
+            <NavLink to="/check-eligibility" className="nav-link" onClick={closeNav}>
               Check Eligibility
             </NavLink>
-            <NavLink to="/contact" className="nav-link">
+            <NavLink to="/contact" className="nav-link" onClick={closeNav}>
               Contact Us
             </NavLink>
-            <NavLink to="/contact" className="btn btn-warning ms-lg-3 nav-cta">
+            <NavLink to="/contact" className="btn btn-warning ms-lg-3 nav-cta" onClick={closeNav}>
               Book Appointment
             </NavLink>
           </Nav>
