@@ -1,16 +1,18 @@
-import axios from 'axios';
+const encode = (data) =>
+  Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&');
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const submitNetlifyForm = async (formName, data) => {
+  const res = await fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: encode({ 'form-name': formName, ...data }),
+  });
+  if (!res.ok) throw new Error('Form submission failed');
+  return res;
+};
 
-const api = axios.create({
-  baseURL: API_URL,
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
-
-export const submitAppointment = (data) => api.post('/appointments', data);
-export const submitContact = (data) => api.post('/contact', data);
-export const subscribeNewsletter = (data) => api.post('/newsletter/subscribe', data);
-
-export default api;
+export const submitContact = (data) => submitNetlifyForm('contact', data);
+export const submitAppointment = (data) => submitNetlifyForm('appointment', data);
+export const subscribeNewsletter = (data) => submitNetlifyForm('newsletter', data);

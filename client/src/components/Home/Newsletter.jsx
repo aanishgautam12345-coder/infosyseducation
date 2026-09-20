@@ -18,7 +18,7 @@ const Newsletter = () => {
     } catch (error) {
       setStatus({
         type: 'danger',
-        message: error.response?.data?.message || 'Subscription failed. Please try again.',
+        message: 'Subscription failed. Please try again.',
       });
     } finally {
       setLoading(false);
@@ -38,6 +38,9 @@ const Newsletter = () => {
             </div>
             <div className="col-lg-6">
               <form onSubmit={handleSubmit} className="d-flex gap-2">
+                <p hidden>
+                  <label>Don't fill this out: <input name="bot-field" /></label>
+                </p>
                 <input
                   type="email"
                   className="form-control form-control-lg"

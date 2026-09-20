@@ -26,8 +26,7 @@ const ContactForm = () => {
       setStatus({ type: 'success', message: 'Your message has been sent successfully! We will get back to you within 24-48 hours.' });
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
     } catch (error) {
-      const msg = error.response?.data?.errors?.[0]?.msg || error.response?.data?.message || 'Failed to send message. Please try again.';
-      setStatus({ type: 'danger', message: msg });
+      setStatus({ type: 'danger', message: 'Failed to send message. Please try again.' });
     } finally {
       setLoading(false);
     }
@@ -45,6 +44,9 @@ const ContactForm = () => {
       )}
 
       <form onSubmit={handleSubmit}>
+        <p hidden>
+          <label>Don't fill this out: <input name="bot-field" /></label>
+        </p>
         <div className="row g-3">
           <div className="col-md-6">
             <label className="form-label">Your Name *</label>

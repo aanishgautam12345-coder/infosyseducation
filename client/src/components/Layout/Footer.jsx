@@ -16,7 +16,7 @@ const Footer = () => {
       setEmail('');
       setTimeout(() => setSubscribed(false), 3000);
     } catch (err) {
-      setError(err.response?.data?.message || 'Subscription failed. Please try again.');
+      setError('Subscription failed. Please try again.');
     }
   };
 
@@ -112,6 +112,9 @@ const Footer = () => {
             </div>
             <div className="col-md-7">
               <form onSubmit={handleSubscribe} className="newsletter-form d-flex gap-2">
+                <p hidden>
+                  <label>Don't fill this out: <input name="bot-field" /></label>
+                </p>
                 <input
                   type="email"
                   className="form-control"

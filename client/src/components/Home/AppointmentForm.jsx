@@ -40,8 +40,7 @@ const AppointmentForm = () => {
         city: '', state: '', country: 'Nepal', appointmentDate: '', message: '',
       });
     } catch (error) {
-      const msg = error.response?.data?.errors?.[0]?.msg || error.response?.data?.message || 'Something went wrong. Please try again.';
-      setStatus({ type: 'danger', message: msg });
+      setStatus({ type: 'danger', message: 'Something went wrong. Please try again.' });
     } finally {
       setLoading(false);
     }
@@ -100,6 +99,9 @@ const AppointmentForm = () => {
               )}
 
               <form onSubmit={handleSubmit}>
+                <p hidden>
+                  <label>Don't fill this out: <input name="bot-field" /></label>
+                </p>
                 <div className="row g-3">
                   <div className="col-md-6">
                     <label className="form-label">Your Name *</label>
