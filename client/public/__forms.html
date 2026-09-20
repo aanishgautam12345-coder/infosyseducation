@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <title>Form submissions</title>
+  </head>
+  <body>
+    <!-- Static form definitions allow Netlify to register forms rendered by React. -->
+    <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input name="bot-field" />
+      <input name="name" />
+      <input name="email" type="email" />
+      <input name="phone" type="tel" />
+      <input name="subject" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <form name="appointment" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="appointment" />
+      <input name="bot-field" />
+      <input name="name" />
+      <input name="email" type="email" />
+      <input name="phone" type="tel" />
+      <input name="streetAddress" />
+      <input name="streetAddress2" />
+      <input name="city" />
+      <input name="state" />
+      <input name="country" />
+      <input name="appointmentDate" type="datetime-local" />
+      <textarea name="message"></textarea>
+    </form>
+
+    <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="newsletter" />
+      <input name="bot-field" />
+      <input name="email" type="email" />
+    </form>
+  </body>
+</html>
