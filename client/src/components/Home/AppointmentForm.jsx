@@ -98,7 +98,8 @@ const AppointmentForm = () => {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit}>
+              <form name="appointment" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit}>
+                <input type="hidden" name="form-name" value="appointment" />
                 <p hidden>
                   <label>Don't fill this out: <input name="bot-field" /></label>
                 </p>

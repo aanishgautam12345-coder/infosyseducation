@@ -4,7 +4,7 @@ const encode = (data) =>
     .join('&');
 
 const submitNetlifyForm = async (formName, data) => {
-  const res = await fetch('/', {
+  const res = await fetch('/__forms.html', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: encode({ 'form-name': formName, ...data }),

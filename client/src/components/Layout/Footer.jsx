@@ -111,12 +111,14 @@ const Footer = () => {
               <p className="text-light small">Receive weekly newsletter with educational materials, popular books and much more!</p>
             </div>
             <div className="col-md-7">
-              <form onSubmit={handleSubscribe} className="newsletter-form d-flex gap-2">
+              <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubscribe} className="newsletter-form d-flex gap-2">
+                <input type="hidden" name="form-name" value="newsletter" />
                 <p hidden>
                   <label>Don't fill this out: <input name="bot-field" /></label>
                 </p>
                 <input
                   type="email"
+                  name="email"
                   className="form-control"
                   placeholder="Your Email"
                   value={email}

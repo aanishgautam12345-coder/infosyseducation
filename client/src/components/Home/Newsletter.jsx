@@ -37,12 +37,14 @@ const Newsletter = () => {
               </p>
             </div>
             <div className="col-lg-6">
-              <form onSubmit={handleSubmit} className="d-flex gap-2">
+              <form name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field" onSubmit={handleSubmit} className="d-flex gap-2">
+                <input type="hidden" name="form-name" value="newsletter" />
                 <p hidden>
                   <label>Don't fill this out: <input name="bot-field" /></label>
                 </p>
                 <input
                   type="email"
+                  name="email"
                   className="form-control form-control-lg"
                   placeholder="Your Email"
                   value={email}
