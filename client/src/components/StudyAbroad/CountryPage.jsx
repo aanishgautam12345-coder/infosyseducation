@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PageBanner from '../common/PageBanner';
+import CountryFlag from '../common/CountryFlag';
 
 const CountryPage = ({ country }) => {
   return (
@@ -19,15 +20,7 @@ const CountryPage = ({ country }) => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-              <div className="country-hero-image" style={{ backgroundColor: country.color, borderRadius: '12px', overflow: 'hidden' }}>
-                {country.image ? (
-                  <img src={country.image} alt={country.name} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-                ) : (
-                  <div className="d-flex align-items-center justify-content-center h-100">
-                    <span style={{ fontSize: '8rem' }}>{country.flag}</span>
-                  </div>
-                )}
-              </div>
+              <CountryFlag country={country} variant="hero" />
             </div>
             <div className="col-lg-6" data-aos="fade-left">
               <h2 className="section-title">Overview</h2>
@@ -71,14 +64,28 @@ const CountryPage = ({ country }) => {
                 <div className="info-icon mb-3">
                   <i className="bi bi-building fs-1 text-primary"></i>
                 </div>
-                <h4>Top Universities</h4>
+                <h4>Universities & Colleges</h4>
                 <ul className="list-unstyled">
                   {country.topUniversities.map((uni, index) => (
-                    <li key={index} className="py-2 border-bottom">
+                    <li
+                      key={index}
+                      className={`py-2 ${index === country.topUniversities.length - 1 ? '' : 'border-bottom'}`}
+                    >
                       <i className="bi bi-mortarboard-fill text-warning me-2"></i>
-                      <a href={uni.url} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-                        {uni.name}
-                      </a>
+                      {uni.url ? (
+                        <a
+                          href={uni.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-decoration-none uni-link"
+                          title={`Visit the ${uni.name} website`}
+                        >
+                          {uni.name}
+                          <i className="bi bi-box-arrow-up-right ms-1 uni-link-icon" aria-hidden="true"></i>
+                        </a>
+                      ) : (
+                        <span>{uni.name}</span>
+                      )}
                     </li>
                   ))}
                 </ul>

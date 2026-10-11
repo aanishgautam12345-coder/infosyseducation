@@ -41,7 +41,7 @@ const WhyStudyAbroad = () => {
         <div className="text-center mb-5" data-aos="fade-up">
           <h2 className="section-title">Why Study Abroad?</h2>
           <p className="section-subtitle">
-            Studying abroad is more than just education — it's a life-changing experience
+            Studying abroad is more than just education, it's a life-changing experience
           </p>
         </div>
         <div className="row g-4">

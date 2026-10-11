@@ -38,10 +38,10 @@ const AboutContent = () => {
                 Infosys Education & Advisory is a leading education consultancy based in Itahari, Nepal, dedicated to helping students achieve their dreams of studying abroad.
               </p>
               <p>
-                We have successfully placed thousands of students in top universities across Canada, Australia, UK, USA, New Zealand, and Malta. Our team of expert counselors provides personalized guidance throughout the entire process — from university selection to visa approval.
+                Every student has a different dream, budget, and starting point. We help students explore study options across Canada, Australia, the UK, the USA, New Zealand, and Malta, with personal guidance from course selection and applications through to visa preparation.
               </p>
               <p>
-                We believe that every student deserves access to world-class education, and we work tirelessly to make that dream a reality. Our comprehensive services include career counseling, university selection, application assistance, visa processing, scholarship guidance, and pre-departure orientation.
+                We believe studying abroad should feel exciting, not confusing. Our team takes time to understand each student’s goals and concerns, then offers practical support with career counseling, institution selection, applications, visa preparation, scholarship information, and pre-departure planning.
               </p>
             </div>
           </div>

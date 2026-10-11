@@ -25,8 +25,8 @@ const ContactInfo = () => {
     {
       icon: 'bi-envelope-fill',
       title: 'Email Us',
-      lines: ['infosyseducation@gmail.com'],
-      links: ['mailto:infosyseducation@gmail.com'],
+      lines: ['admission@infosysedu.com'],
+      links: ['mailto:admission@infosysedu.com'],
     },
     {
       icon: 'bi-clock-fill',

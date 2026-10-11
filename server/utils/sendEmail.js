@@ -1,15 +1,26 @@
 const Mailgun = require('mailgun.js');
 const formData = require('form-data');
 
-const mailgun = new Mailgun(formData);
-const mg = mailgun.client({
-  username: 'api',
-  key: process.env.MAILGUN_API_KEY,
-});
+let mg = null;
+
+const getMailgunClient = () => {
+  if (!mg) {
+    const mailgun = new Mailgun(formData);
+    mg = mailgun.client({
+      username: 'api',
+      key: process.env.MAILGUN_API_KEY,
+    });
+  }
+  return mg;
+};
 
 const sendEmail = async ({ to, from, subject, html }) => {
   try {
-    await mg.messages.create(process.env.MAILGUN_DOMAIN, {
+    if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
+      console.warn('Email skipped: MAILGUN_API_KEY / MAILGUN_DOMAIN not configured.');
+      return false;
+    }
+    await getMailgunClient().messages.create(process.env.MAILGUN_DOMAIN, {
       from,
       to: [to],
       subject,

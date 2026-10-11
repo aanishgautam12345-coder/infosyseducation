@@ -82,7 +82,7 @@ const AppointmentForm = () => {
                 <i className="bi bi-telephone-fill me-2"></i>+977 9714607930, +977 9714607932
               </p>
               <p className="text-warning">
-                <i className="bi bi-envelope-fill me-2"></i>infosyseducation@gmail.com
+                <i className="bi bi-envelope-fill me-2"></i>admission@infosysedu.com
               </p>
             </div>
           </div>

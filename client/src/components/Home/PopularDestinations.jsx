@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { countries } from '../../data/countries';
+import CountryFlag from '../common/CountryFlag';
 
 const PopularDestinations = () => {
   return (
@@ -16,13 +17,7 @@ const PopularDestinations = () => {
           {countries.map((country, index) => (
             <div key={country.id} className="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay={index * 100}>
               <div className="country-card h-100">
-                <div className="country-image" style={{ backgroundColor: country.color }}>
-                  {country.image ? (
-                    <img src={country.image} alt={country.name} className="country-flag-img" />
-                  ) : (
-                    <span className="country-flag-large">{country.flag}</span>
-                  )}
-                </div>
+                <CountryFlag country={country} />
                 <div className="country-info">
                   <h4>{country.tagline}</h4>
                   <p>{country.description}</p>

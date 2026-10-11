@@ -93,7 +93,7 @@ const Footer = () => {
               </div>
               <div className="contact-item">
                 <i className="bi bi-envelope-fill text-warning"></i>
-                <p><a href="mailto:infosyseducation@gmail.com">infosyseducation@gmail.com</a></p>
+                <p><a href="mailto:admission@infosysedu.com">admission@infosysedu.com</a></p>
               </div>
             </div>
           </div>
